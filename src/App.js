@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+import Upload from './components/Upload';
+import PatientInfo from './components/PatientInfo';
+import Label from './components/Label';
+import ImageArea from './components/ImageArea';
+import Canvas from './components/Canvas';
 
 function App() {
+
+  const [uploadFile, setUploadFile] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <Upload setUploadFile={setUploadFile} uploadFile={uploadFile}/>
+        <PatientInfo uploadFile={uploadFile}/>
+        <ImageArea uploadFile={uploadFile}/>
+        <Canvas/>
+        <Label/>
+      </>
     </div>
   );
 }
