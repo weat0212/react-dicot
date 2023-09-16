@@ -10,11 +10,8 @@ function ImageArea({uploadFile}) {
         }
     }, [uploadFile]);
 
-
     return (
-        <div>
-            <img src={fileContent} alt='圖檔'></img>
-        </div>
+        <img src={fileContent} alt='圖檔'></img>
     )
 }
 
